@@ -15,19 +15,23 @@
     <body>
         <main>
             <script>
-                function play() {
-                  var audio = document.getElementById("audio");
-                  audio.play();
+                function audioPlay() {
+                    var audio = document.getElementById("audio");
+                    audio.play();
+                }
+                function videoPlay() {
+                    var video = document.getElementById("video");
+                    video.play()
                 }
             </script>
             <input type="checkbox" id="overlay-toggle">
             <div class="overlay fullscreen">
-                <label for="overlay-toggle" onclick="play()">click to enter</label>
+                <label for="overlay-toggle" onclick="audioPlay();videoPlay()">click to enter</label>
             </div>
-            <audio id="audio" autoplay loop>
+            <audio autoplay loop id="audio" >
                 <source src="howwasyourday.mp3" type="audio/mp3">
             </audio>
-            <video autoplay muted loop playsinline class="fullscreen bg-video">
+            <video autoplay muted loop playsinline class="fullscreen bg-video" id="video">
                 <source src="background-video.mp4" type="video/mp4">
             </video>
             <section class="fullscreen text-content">
