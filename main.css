@@ -66,6 +66,12 @@ body {
   animation-delay: 0s, 600ms;
   animation-duration: 600ms, 1ms;
 }
+#overlay-toggle:checked ~ .overlay label {
+  animation-fill-mode: forwards;
+  animation-name: fade
+  animation-delay: 0s;
+  animation-duration: 500ms;
+}
 @keyframes fade{
   to {
     opacity: 0;
