@@ -68,7 +68,7 @@ body {
 }
 #overlay-toggle:checked ~ .overlay label {
   animation-fill-mode: forwards;
-  animation-name: fade
+  animation-name: fade;
   animation-delay: 0s;
   animation-duration: 500ms;
 }
