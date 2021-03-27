@@ -17,9 +17,6 @@ body {
 .overlay {
   z-index: 1;
   background-color: black;
-  transition:
-    background-color 250ms ease,
-    display 251ms ease;
 }
 .overlay label {
   display: grid;
