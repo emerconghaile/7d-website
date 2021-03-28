@@ -28,12 +28,16 @@
             <input type="checkbox" autocomplete="off" id="mute-audio-toggle">
             <div class="overlay">
                 <label class="top-label" for="play-audio-toggle" id="play-audio" onclick="audioPlay();videoPlay()">
-                    <span class="overlay-text no-hover">tap to enter<br><span class="small-overlay-text">with audio</span></span>
-                    <span class="overlay-text hover">click to enter<br><span class="small-overlay-text">with audio</span></span>
+                    <span class="bar-top">
+                        <span class="grow-shrink-top overlay-text no-hover">tap to enter<br><span class="small-overlay-text">with audio</span></span>
+                        <span class="grow-shrink-top overlay-text hover">click to enter<br><span class="small-overlay-text">with audio</span></span>
+                    </span>
                 </label>
                 <label class="bottom-label" for="mute-audio-toggle" id="mute-audio" onclick="videoPlay()">
-                    <span class="overlay-text no-hover">tap to enter<br><span class="small-overlay-text">muted</span></span>
-                    <span class="overlay-text hover">click to enter<br><span class="small-overlay-text">muted</span></span>
+                    <span class="bar-bot">
+                        <span class="grow-shrink-bot overlay-text no-hover">tap to enter<br><span class="small-overlay-text">muted</span></span>
+                        <span class="grow-shrink-bot overlay-text hover">click to enter<br><span class="small-overlay-text">muted</span></span>
+                    </span>
                 </label>
             </div>
             <audio loop preload="auto" id="audio">

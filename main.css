@@ -85,28 +85,57 @@ input[type=checkbox] {
   --fade-delay: 500ms;
   --fade-duration: 400ms;
 }
+.overlay-text {
+  overflow: hidden;
+}
 /* if audio is played */
-#play-audio-toggle:checked ~ * #play-audio span {
+#play-audio-toggle:checked ~ * .grow-shrink-top {
   animation-fill-mode: forwards;
   animation-name: text-grow;
   animation-duration: var(--text-grow-duration);
 }
-#play-audio-toggle:checked ~ * #mute-audio span {
+#play-audio-toggle:checked ~ * .grow-shrink-bot {
   animation-fill-mode: forwards;
   animation-name: text-shrink;
   animation-duration: var(--text-grow-duration);
 }
+#play-audio-toggle:checked ~ * .bar-top {
+  animation-fill-mode: forwards;
+  animation-name: text-bar-down;
+  animation-delay: 400ms;
+  animation-duration: 400ms;
+}
+#play-audio-toggle:checked ~ * .bar-bot {
+  animation-fill-mode: forwards;
+  animation-name: text-bar-up;
+  animation-delay: 400ms;
+  animation-duration: 400ms;
+}
+
 /* if audio is muted */
-#mute-audio-toggle:checked ~ * #mute-audio span {
+#mute-audio-toggle:checked ~ * .grow-shrink-bot {
   animation-fill-mode: forwards;
   animation-name: text-grow;
   animation-duration: var(--text-grow-duration);
 }
-#mute-audio-toggle:checked ~ * #play-audio span {
+#mute-audio-toggle:checked ~ * .grow-shrink-top {
   animation-fill-mode: forwards;
   animation-name: text-shrink;
   animation-duration: var(--text-grow-duration);
 }
+#mute-audio-toggle:checked ~ * .bar-top {
+  animation-fill-mode: forwards;
+  animation-name: text-bar-down;
+  animation-delay: 400ms;
+  animation-duration: 400ms;
+}
+#mute-audio-toggle:checked ~ * .bar-bot {
+  animation-fill-mode: forwards;
+  animation-name: text-bar-up;
+  animation-delay: 400ms;
+  animation-duration: 400ms;
+}
+
 @keyframes text-shrink {
   to {
     transform: scale(0.8);
@@ -118,39 +147,53 @@ input[type=checkbox] {
     
   }
 }
+@keyframes text-bar-down {
+  to {
+    transform: translateY(25vh) scale(100, 0.1) ;
+    background-color: black;
+  }
+}
+@keyframes text-bar-up {
+  to {
+    transform: translateY(-25vh) scale(100, 0.1) ;
+    background-color: black;
+  }
+}
 /* slide up overlay */
+
 #play-audio-toggle:checked ~ * .top-label {
   animation-fill-mode: forwards;
-  animation-name: slide-up, fade;
-  animation-delay: var(--slide-delay), var(--fade-delay);
+  animation-name: slide-up;
+  animation-delay: 800ms;
   animation-duration: var(--slide-duration), var(--fade-duration);
 }
 #play-audio-toggle:checked ~ * .bottom-label {
   animation-fill-mode: forwards;
-  animation-name: slide-down, fade;
-  animation-delay: var(--slide-delay), var(--fade-delay);
+  animation-name: slide-down;
+  animation-delay: 800ms;
   animation-duration: var(--slide-duration), var(--fade-duration);
 }
 #mute-audio-toggle:checked ~ * .top-label {
   animation-fill-mode: forwards;
-  animation-name: slide-up, fade;
-  animation-delay: var(--slide-delay), var(--fade-delay);
+  animation-name: slide-up;
+  animation-delay: 800ms;
   animation-duration: var(--slide-duration), var(--fade-duration);
 }
 #mute-audio-toggle:checked ~ * .bottom-label {
   animation-fill-mode: forwards;
-  animation-name: slide-down, fade;
-  animation-delay: var(--slide-delay), var(--fade-delay);
+  animation-name: slide-down;
+  animation-delay: 800ms;
   animation-duration: var(--slide-duration), var(--fade-duration);
 }
+
 @keyframes slide-up {
   to {
-    transform: translateY(-50vh);
+    transform: translateY(-55vh);
   }
 }
 @keyframes slide-down {
   to {
-    transform: translateY(50vh);
+    transform: translateY(55vh);
   }
 }
 @keyframes fade {
