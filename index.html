@@ -26,7 +26,10 @@
             </script>
             <input type="checkbox" autocomplete="off" id="overlay-toggle">
             <div class="overlay">
-                <label for="overlay-toggle" onclick="audioPlay();videoPlay()">click to enter<br>audio will play</label>
+                <label for="overlay-toggle" onclick="audioPlay();videoPlay()">
+                    <span class="no-hover">tap to enter<br>audio will play</span>
+                    <span class="hover">click to enter<br>audio will play</span>
+                </label>
             </div>
             <audio loop preload="auto" id="audio">
                 <source src="howwasyourday.mp3" type="audio/mp3">
