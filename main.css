@@ -16,7 +16,7 @@ body {
 }
 .overlay {
   z-index: 1;
-  background-color: black;
+  background-color: white;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -28,7 +28,7 @@ body {
   place-items: center;
   width: 100vw;
   height: 100vh;
-  color: white;
+  color: black;
   font-size: 2rem;
 }
 .fullscreen {
