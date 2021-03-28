@@ -77,42 +77,30 @@ input[type=checkbox] {
 /* if audio is played */
 #play-audio-toggle:checked ~ * #play-audio {
   animation-fill-mode: forwards;
-  animation-name: text-shrink, text-grow;
-  animation-delay: 0ms, 450ms;
-  animation-duration: 450ms, 450ms;
+  animation-name: text-grow;
+  animation-delay: 0ms;
+  animation-duration: 500ms;
 }
 #play-audio-toggle:checked ~ * #mute-audio {
   animation-fill-mode: forwards;
   animation-name: text-shrink;
-  animation-delay: 450ms;
-  animation-duration: 450ms;
+  animation-delay: 0ms;
+  animation-duration: 500ms;
 }
 /* if audio is muted */
 #mute-audio-toggle:checked ~ * #mute-audio {
   animation-fill-mode: forwards;
-  animation-name: text-shrink, text-grow;
-  animation-delay: 0ms, 450ms;
-  animation-duration: 450ms, 450ms;
+  animation-name: text-grow;
+  animation-delay: 0ms;
+  animation-duration: 500ms;
 }
 #mute-audio-toggle:checked ~ * #play-audio {
   animation-fill-mode: forwards;
   animation-name: text-shrink;
-  animation-delay: 450ms;
-  animation-duration: 450ms;
+  animation-delay: 0ms;
+  animation-duration: 500ms;
 }
-/* slide up overlay */
-#mute-audio-toggle:checked ~ .overlay {
-  animation-fill-mode: forwards;
-  animation-name: overlay-up, hide;
-  animation-delay: 900ms, 1400ms;
-  animation-duration: 500ms, 1ms;
-}
-#play-audio-toggle:checked ~ .overlay {
-  animation-fill-mode: forwards;
-  animation-name: overlay-up, hide;
-  animation-delay: 900ms, 1400ms;
-  animation-duration: 500ms, 1ms;
-}
+
 @keyframes text-shrink {
   to {
     transform: scale(0.8);
@@ -124,14 +112,29 @@ input[type=checkbox] {
     
   }
 }
-@keyframes overlay-up {
+
+/* slide up overlay */
+#play-audio-toggle:checked ~ .overlay {
+  animation-fill-mode: forwards;
+  animation-name: zip-y, fade;
+  animation-delay: 500ms, 650ms;
+  animation-duration: 500ms, 250ms;
+}
+#mute-audio-toggle:checked ~ .overlay {
+  animation-fill-mode: forwards;
+  animation-name: zip-y, fade;
+  animation-delay: 500ms, 650ms;
+  animation-duration: 500ms, 250ms;
+}
+
+@keyframes zip-y {
   to {
-    transform: translateY(-100%);
+    transform: scaleY(5);
   }
 }
-@keyframes hide {
+@keyframes fade {
   to {
-    visibility: hidden;
+    opacity: 0;
   }
 }
 
