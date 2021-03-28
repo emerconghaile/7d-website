@@ -10,7 +10,7 @@ html {
 body {
   background: black;
 }
-#overlay-toggle {
+input[type=checkbox] {
   position: absolute;
   display: none;
 }
@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
-.overlay label {
+.overlay-labels {
   display: grid;
   place-items: center;
   width: 100vw;
@@ -37,6 +37,9 @@ body {
 }
 .hover {
   display: none;
+}
+.small-overlay-text {
+  font-size: 1rem;
 }
 .fullscreen {
   position: fixed;
@@ -70,28 +73,55 @@ body {
   line-height: 1.7;
   color: #00e676;
 }
-#overlay-toggle:checked ~ .overlay label {
+
+/* if audio is played */
+#play-audio-toggle:checked ~ * #play-audio {
   animation-fill-mode: forwards;
-  animation-name: text-up, text-down, hide;
-  animation-delay: 0s, 500ms, 899ms;
-  animation-duration: 500ms, 399ms, 1ms;
+  animation-name: text-shrink, text-grow;
+  animation-delay: 0ms, 450ms;
+  animation-duration: 450ms, 450ms;
 }
-#overlay-toggle:checked ~ .overlay {
+#play-audio-toggle:checked ~ * #mute-audio {
+  animation-fill-mode: forwards;
+  animation-name: text-shrink;
+  animation-delay: 450ms;
+  animation-duration: 450ms;
+}
+/* if audio is muted */
+#mute-audio-toggle:checked ~ * #mute-audio {
+  animation-fill-mode: forwards;
+  animation-name: text-shrink, text-grow;
+  animation-delay: 0ms, 450ms;
+  animation-duration: 450ms, 450ms;
+}
+#mute-audio-toggle:checked ~ * #play-audio {
+  animation-fill-mode: forwards;
+  animation-name: text-shrink;
+  animation-delay: 450ms;
+  animation-duration: 450ms;
+}
+/* slide up overlay */
+#mute-audio-toggle:checked ~ .overlay {
   animation-fill-mode: forwards;
   animation-name: overlay-up, hide;
   animation-delay: 900ms, 1400ms;
   animation-duration: 500ms, 1ms;
 }
-@keyframes text-up {
+#play-audio-toggle:checked ~ .overlay {
+  animation-fill-mode: forwards;
+  animation-name: overlay-up, hide;
+  animation-delay: 900ms, 1400ms;
+  animation-duration: 500ms, 1ms;
+}
+@keyframes text-shrink {
   to {
     transform: scale(0.8);
-    transform: translateY(-15%);
   }
 }
-@keyframes text-down {
+@keyframes text-grow {
   to {
-    transform: scale(0.2);
-    transform: translateY(55%);
+    transform: scale(1.2);
+    
   }
 }
 @keyframes overlay-up {
@@ -104,6 +134,7 @@ body {
     visibility: hidden;
   }
 }
+
 @media(hover: hover) {
   .hover {
     display: block;

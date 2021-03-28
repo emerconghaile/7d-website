@@ -24,12 +24,19 @@
                     video.play()
                 }
             </script>
-            <input type="checkbox" autocomplete="off" id="overlay-toggle">
+            <input type="checkbox" autocomplete="off" id="play-audio-toggle">
+            <input type="checkbox" autocomplete="off" id="mute-audio-toggle">
             <div class="overlay">
-                <label for="overlay-toggle" onclick="audioPlay();videoPlay()">
-                    <span class="no-hover">tap to enter<br>audio will play</span>
-                    <span class="hover">click to enter<br>audio will play</span>
-                </label>
+                <div class="overlay-labels">
+                    <label for="play-audio-toggle" id="play-audio" onclick="audioPlay();videoPlay()">
+                        <span class="no-hover">tap to enter<br><span class="small-overlay-text">with audio</span></span>
+                        <span class="hover">click to enter<br><span class="small-overlay-text">with audio</span></span>
+                    </label>
+                    <label for="mute-audio-toggle" id="mute-audio" onclick="videoPlay()">
+                        <span class="no-hover">tap to enter<br><span class="small-overlay-text">muted</span></span>
+                        <span class="hover">click to enter<br><span class="small-overlay-text">muted</span></span>
+                    </label>
+                </div>
             </div>
             <audio loop preload="auto" id="audio">
                 <source src="howwasyourday.mp3" type="audio/mp3">
