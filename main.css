@@ -28,8 +28,9 @@ body {
 }
 .fullscreen {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   min-height: 100vh;
   min-width: 100vw;
 }
