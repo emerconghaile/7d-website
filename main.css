@@ -79,10 +79,10 @@ input[type=checkbox] {
 
 /* custom animation time properties */
 .overlay {
-  --text-grow-duration: 500ms;
-  --slide-delay: 500ms;
+  --text-grow-duration: 400ms;
+  --slide-delay: 400ms;
   --slide-duration: 500ms;
-  --fade-delay: 600ms;
+  --fade-delay: 500ms;
   --fade-duration: 400ms;
 }
 /* if audio is played */
